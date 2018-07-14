@@ -5,9 +5,9 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-shell',
   templateUrl: './shell.component.html',
-  styleUrls: ['./shell.component.css']
+  styleUrls: ['./shell.component.scss']
 })
-export class ShellComponent {
+export class ShellComponent {  
   isHandset: Observable<BreakpointState> = this.breakpointObserver.observe(Breakpoints.Handset);
   constructor(private breakpointObserver: BreakpointObserver) {}
 }
