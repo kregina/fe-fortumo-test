@@ -15,9 +15,12 @@
     flex-grow: 1;
     align-items: center;
     justify-content: center;
-  }
 
-  .response{
-    position: absolute;
+    .response{
+      position: absolute;
+      margin-top: 100px;
+      width: 100%;
+      text-align: center;
+    }
   }
 }
