@@ -21,6 +21,6 @@
     
     "xhr_endpoint_4": { 
         "activity": "redirect", 
-        "activity_url": "/landing_page" 
+        "activity_url": "/landing-page" 
     }
 }
