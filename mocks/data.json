@@ -1,26 +1,26 @@
 {
     "xhr_endpoint": { 
         "activity": "xhr", 
-        "activity_url": "http://example.com/xhr_endpoint_1" 
+        "activity_url": "http://localhost:3000/xhr_endpoint_1" 
     },
 
     "xhr_endpoint_1": { 
         "activity": "xhr", 
-        "activity_url": "http://example.com/xhr_endpoint_2" 
+        "activity_url": "http://localhost:3000/xhr_endpoint_2" 
     },
 
     "xhr_endpoint_2": { 
         "activity": "xhr", 
-        "activity_url": "http://example.com/xhr_endpoint_3" 
+        "activity_url": "http://localhost:3000/xhr_endpoint_3" 
     },
 
     "xhr_endpoint_3": { 
         "activity": "xhr", 
-        "activity_url": "http://example.com/xhr_endpoint_4" 
+        "activity_url": "http://localhost:3000/xhr_endpoint_4" 
     },
     
     "xhr_endpoint_4": { 
         "activity": "redirect", 
-        "activity_url": "http://example.com/landing_page" 
+        "activity_url": "/landing_page" 
     }
 }
