@@ -1,16 +1,23 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { HomeComponent } from './home.component';
+import { HomeComponent } from "./home.component";
+import { NO_ERRORS_SCHEMA } from "@angular/core";
+import { SomethingAwesomeService } from "../core/something-awesome/something-awesome.service";
 
-describe('HomeComponent', () => {
+describe("HomeComponent", () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
 
   beforeEach(async(() => {
+    const somethingAwesomeService = jasmine.createSpyObj('SomethingAwesomeService', ['doSomethingAwesome']);
+
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
-    })
-    .compileComponents();
+      declarations: [HomeComponent],
+      schemas: [NO_ERRORS_SCHEMA],
+      providers: [
+        { provide: SomethingAwesomeService, useValue: somethingAwesomeService }
+      ]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +26,7 @@ describe('HomeComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

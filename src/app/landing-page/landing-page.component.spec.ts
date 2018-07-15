@@ -1,16 +1,17 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { LandingPageComponent } from './landing-page.component';
+import { LandingPageComponent } from "./landing-page.component";
+import { NO_ERRORS_SCHEMA } from "@angular/core";
 
-describe('LandingPageComponent', () => {
+describe("LandingPageComponent", () => {
   let component: LandingPageComponent;
   let fixture: ComponentFixture<LandingPageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LandingPageComponent ]
-    })
-    .compileComponents();
+      declarations: [LandingPageComponent],
+      schemas: [NO_ERRORS_SCHEMA]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +20,7 @@ describe('LandingPageComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
