@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { expand } from "rxjs/operators";
 import { environment } from "../../../environments/environment";
 import { SomethingAwesome } from "./something-awesome";
-import { empty } from "rxjs";
+import { empty, Observable } from "rxjs";
 import { Router } from "@angular/router";
 
 @Injectable({
@@ -13,17 +13,20 @@ export class SomethingAwesomeService {
   constructor(private http: HttpClient, private router: Router) {}
 
   doSomethingAwesome() {
-    return this.http.get<SomethingAwesome>(`${environment.api}/xhr_endpoint`).pipe(
-      expand(response => {
-        console.log(response);
-        switch (response.activity) {
-          case "xhr":
-            return this.http.get<SomethingAwesome>(response.activity_url);
-          case "redirect":
-            this.router.navigateByUrl(response.activity_url);
-            return empty();
-        }
-      })
-    );
+    const firstRequestUrl = `${environment.api}/first_endpoint`;
+
+    return this.http
+      .get<SomethingAwesome>(firstRequestUrl)
+      .pipe(expand(response => this.handleResponse(response)));
+  }
+
+  private handleResponse(response): Observable<SomethingAwesome> {
+    switch (response.activity) {
+      case "xhr":
+        return this.http.get<SomethingAwesome>(response.activity_url);
+      case "redirect":
+        this.router.navigateByUrl(response.activity_url);
+        return empty();
+    }
   }
 }

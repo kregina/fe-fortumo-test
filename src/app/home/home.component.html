@@ -6,12 +6,17 @@
     </mat-card-content>
     <ng-template #loading>    
       <mat-spinner></mat-spinner>  
-      <div class="response" *ngIf="loading$ | async as response">
+      <div class="response" *ngIf="loading$ | async as response; else firstRequest">
+        <p>The API responded:</p>
+        <p>{{ response | json}}</p>
         <ng-container [ngSwitch]="response.activity">
           <p *ngSwitchCase="'xhr'">Requesting endpoint : {{ response.activity_url }}</p>
           <p *ngSwitchCase="'redirect'">Redirecting to: {{ response.activity_url }}</p>
         </ng-container>
       </div>
+      <ng-template #firstRequest>
+        <p class="response">Making our first request =]</p>
+      </ng-template>
     </ng-template>
   </mat-card>
 </div>
