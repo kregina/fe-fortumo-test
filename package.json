@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "mock:server": "json-server --watch mocks/data.json",
-    "start": "concurrently — kill-others \"npm run mock:server\" \"ng serve -o\"",
+    "mock:server": "json-server --watch mocks/data.json --delay 3000",
+    "start": "concurrently --kill-others \"npm run mock:server\" \"ng serve --open\"",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
