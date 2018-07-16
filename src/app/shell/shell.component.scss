@@ -11,6 +11,16 @@
     width: 200px;
   }
 
+  .flex-spacer{
+    flex:1 1 auto;
+  }
+
+  .github{
+    height: 26px;
+    margin: 0 4px 3px 0;
+    vertical-align: middle;
+  }
+
   .is-handset .toolbar {
     position: fixed;
     z-index: 2;
