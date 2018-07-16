@@ -10,11 +10,26 @@
     }
   
     .card {
-      display: flex;
-      flex: 1;
-      flex-grow: 1;
-      align-items: center;
-      justify-content: center;
+      max-width: 400px;
     }
+    
+    .header-image {
+      background-image: url('../../assets/img/me.jpg');
+      background-size: cover;
+    }
+
+    .mat-card-actions{
+      display: flex;
+
+      
+      .flex-spacer{
+        flex:1 1 auto;
+      }
+    }
+
+    .mat-icon{
+      vertical-align: middle;
+    }
+    
   }
   
