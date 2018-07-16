@@ -12,7 +12,7 @@ export class ShellComponent {
   isHandset: Observable<BreakpointState> = this.breakpointObserver.observe(Breakpoints.Handset);
   constructor(private breakpointObserver: BreakpointObserver, private router: Router) {}
 
-  goAboutPage(page){
+  goAboutPage(){
     this.router.navigateByUrl('/about');
   }
 }

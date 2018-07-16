@@ -2,6 +2,7 @@ import { fakeAsync, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { ShellComponent } from "./shell.component";
 import { NO_ERRORS_SCHEMA } from "@angular/core";
+import { RouterTestingModule } from "@angular/router/testing";
 
 describe("ShellComponent", () => {
   let component: ShellComponent;
@@ -10,6 +11,7 @@ describe("ShellComponent", () => {
   beforeEach(
     fakeAsync(() => {
       TestBed.configureTestingModule({
+        imports: [RouterTestingModule],
         declarations: [ShellComponent],
         schemas: [NO_ERRORS_SCHEMA]
       }).compileComponents();
@@ -22,5 +24,12 @@ describe("ShellComponent", () => {
 
   it("should compile", () => {
     expect(component).toBeTruthy();
+  });
+
+  it("should go About Page", () => {
+    //act -> invokes the method under the test
+    component.goAboutPage();
+    //assert -> verifies that the action of the methid under test behaves as expected
+    expect(component.goAboutPage).toBeTruthy();
   });
 });
