@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 
 import { LandingPageRoutingModule } from './landing-page-routing.module';
 import { LandingPageComponent } from './landing-page.component';
-import { MaterialModule } from '../shared/material/material.module';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    MaterialModule,
+    SharedModule,
     LandingPageRoutingModule
   ],
   declarations: [LandingPageComponent]
