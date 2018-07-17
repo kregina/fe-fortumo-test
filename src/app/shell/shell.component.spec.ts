@@ -25,11 +25,4 @@ describe("ShellComponent", () => {
   it("should compile", () => {
     expect(component).toBeTruthy();
   });
-
-  it("should go About Page", () => {
-    //act -> invokes the method under the test
-    component.goAboutPage();
-    //assert -> verifies that the action of the methid under test behaves as expected
-    expect(component.goAboutPage).toBeTruthy();
-  });
 });
