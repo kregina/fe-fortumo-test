@@ -1,27 +1,68 @@
+[![Build Status](https://travis-ci.org/kregina/fe-fortumo-test.svg?branch=master)](https://travis-ci.org/kregina/fe-fortumo-test)  [![codecov](https://codecov.io/gh/kregina/fe-fortumo-test/branch/master/graph/badge.svg)](https://codecov.io/gh/kregina/fe-fortumo-test) [![Dependencies](https://david-dm.org/kregina/fe-fortumo-test.svg)](https://david-dm.org/kregina/fe-fortumo-test)
+
 # Fortumo
+This project was developed as a challenge for Fortumo Frontend Developer opportunity.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+## Getting Started
 
-## Development server
+A simple application that does multiple requests to different services in sequence. It know the URL of the first service and gets
+each subsequent request from the response.
+Writing an iterator which polls a number of external services and if a certain criterion is met, redirects the user elsewhere.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+From the user's perspective, the experience is as follows:
 
-## Code scaffolding
+* user arrives to the site,
+* clicks a button,
+* sees a loader,
+* and is redirected to another page.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+From the technical perspective, the flow follows a similar pattern:
 
-## Build
+* user arrives to the site,
+* front end makes a request to the first service,
+* the first service responds with the url of the second service and instructs to make an XHR request,
+* front end makes a request to the second service,
+* 3-4 are repeated n times
+* the (n+1)th service responds with the next url and instructs to redirect the user to the page
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Prerequisites
 
-## Running unit tests
+To run this project you need: 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+[NodeJs](https://nodejs.org/en/download/)
 
-## Running end-to-end tests
+### Installing and running
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Clone the project:
 
-## Further help
+```
+git clone https://github.com/kregina/fe-fortumo-test.git
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Install the depedencies:
+
+```
+npm install
+```
+
+Run the application:
+
+```
+npm start
+```
+
+Run the tests:
+
+```
+npm test
+```
+
+Run the tests with code coverage:
+
+```
+npm test --code-coverage
+```
+
+## Author
+
+* **Kelly Silva** - [Linkedin](https://www.linkedin.com/in/kregina/)

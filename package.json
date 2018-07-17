@@ -1,6 +1,8 @@
 {
   "name": "fortumo",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "This project was developed as a challenge for Fortumo Frontend Developer opportunity.",
+  "author": "Kelly Silva",
   "scripts": {
     "ng": "ng",
     "mock:server": "json-server --watch mocks/data.json --delay 3000",
