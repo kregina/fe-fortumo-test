@@ -60,7 +60,7 @@ npm test
 Run the tests with code coverage:
 
 ```
-npm test --code-coverage
+npm run test:coverage
 ```
 
 ## Author

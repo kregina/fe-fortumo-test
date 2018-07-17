@@ -9,6 +9,7 @@
     "start": "concurrently --kill-others \"npm run mock:server\" \"ng serve --open --aot\"",
     "build": "ng build",
     "test": "ng test",
+    "test:coverage": "ng test --code-coverage --watch=false",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
