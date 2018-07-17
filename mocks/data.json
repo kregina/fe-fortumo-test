@@ -16,6 +16,6 @@
     
     "last_endpoint": { 
         "activity": "redirect", 
-        "activity_url": "/landing-page" 
+        "activity_url": "landing-page" 
     }
 }

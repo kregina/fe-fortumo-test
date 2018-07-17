@@ -25,7 +25,9 @@ export class SomethingAwesomeService {
       case "xhr":
         return this.http.get<SomethingAwesome>(response.activity_url);
       case "redirect":
-        this.router.navigateByUrl(response.activity_url);
+        this.router
+          .navigate([response.activity_url])
+          .catch(() => ('Redirect error'));
         return empty();
     }
   }

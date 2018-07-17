@@ -17,13 +17,7 @@ describe("SomethingAwesomeService", () => {
     TestBed.configureTestingModule({
       imports: [
         HttpClientTestingModule,
-        RouterTestingModule.withRoutes([
-          {
-            path: "landing-page",
-            loadChildren: "./landing-page/landing-page.module#LandingPageModule"
-          }
-        ])
-      ],
+        RouterTestingModule],
       providers: [SomethingAwesomeService]
     });
 
@@ -44,7 +38,7 @@ describe("SomethingAwesomeService", () => {
 
     const lastResponse = {
       activity: "redirect",
-      activity_url: "/landing-page"
+      activity_url: "landing-page"
     };
 
     const responses = [];
